@@ -65,8 +65,11 @@ def lt_from_s_deterministic(T):
 
 def is_deterministic(A):
     # A : automate fini
-    # A COMPLETER
-    return
+    (listeS, listeT, listeI, listeF, eqs) = A
+    for sommet in listeS:
+        if lt_from_s_deterministic(lt_from_s(eqs, sommet, listeT)) == False:
+            return False
+    return True
 
 # Determinisation
 #----------------
@@ -89,7 +92,7 @@ def make_eq_trans(eqS):
 
 def make_det(A):
     # A : automate fini
-    # A COMPLETER
+    
     return
  
 

@@ -1,5 +1,6 @@
 from ensembles import *
 from automates_finis import *
+from automates_finis_det import *
 
 ex_A = ([0,1,2,3,4],\
         [(0,None,2),(0,None,3),(1,"b",1),(1,"a",2),(1,"b",3), \
@@ -8,6 +9,7 @@ ex_A = ([0,1,2,3,4],\
 
 (ex_S,ex_T,ex_I,ex_F,ex_eqS) = ex_A
 
+print("test : eps_cl")
 print(eps_cl(ex_eqS,0,ex_T))
 print(eps_cl(ex_eqS,1,ex_T))
 print(eps_cl(ex_eqS,4,ex_T))
@@ -17,6 +19,14 @@ ex_RcoR = ([0,1,2,3,4,5],[(0,"a",1), (0,"a",2), (1,"a",1), (1,"b",5),\
                            (2,None,3), (3,"a",3), (3,"b",3), (4,"b",3),\
                            (4,"a",5)],\
             [0],[1,5],eq_atom)
-            
+
+print("test : reach_A")         
 print(reach_A(ex_RcoR))
+print("test : co_reach_A")
 print(co_reach_A(ex_RcoR))
+
+print("test : is_deterministic")
+print(is_deterministic(ex_A))
+
+print("test : make_det")
+print(make_det(ex_A))
