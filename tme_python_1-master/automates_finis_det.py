@@ -92,8 +92,30 @@ def make_eq_trans(eqS):
 
 def make_det(A):
     # A : automate fini
+    (listeS, listeT, listeI, listeF, eqs) = A
+    fini=[]
+    pasfini=[eps_cl_set(eqs, listeI, listeT)]
+    T=[]
+
+    while pasfini != []:
+        ptr=pasfini[0]
+        fini+=[ptr]
+        pasfini=pasfini[1:]
+        for l in label_from_set(eqs, ptr, listeT):
+            next=[]
+            for s in ptr:
+                next=union(eqs, reach_from(eqs, s, l, listeT), next)
+            if not is_in(eqs, next, fini):
+                pasfini=ajout(eqs, next, pasfini)
+                T=ajout(eqs, (ptr, l, next), T)
     
-    return
+    F=[]
+    for i in fini:
+        for j in i:
+            if is_in(eqs, j, listeF):
+                F=ajout(eqs, i, F)
+                continue
+    return (fini, T, eps_cl_set(eqs, listeI, listeT), F, eqs)
  
 
 

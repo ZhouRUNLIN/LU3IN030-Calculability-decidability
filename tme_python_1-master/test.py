@@ -30,3 +30,9 @@ print(is_deterministic(ex_A))
 
 print("test : make_det")
 print(make_det(ex_A))
+
+#exe 2.1
+ex_BA = (["2D","2A","G","1"],\
+        [("2D","R","1"),("2D","D","G"),("2D","A","2A"),("2A","A","2D"),("2A","D","2A"),("2A","R","1"),("2G","R","1"),("2G","D","2A"),("2G","A","2A"),("1","A","1"),("1","D","1"),("1","R","2A"),("1","R","2D")],\
+                ["2D","2A","1"],["G"],eq_atom)
+print(make_det(ex_BA))
