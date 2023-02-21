@@ -79,10 +79,9 @@ def next_configs(a,c,w):
     (etat, pile) = c
     
     if pile == []:
-    	return []
-    
+    	return []  
     listeVide=find_trans(etat, eq_st, t_rel, pile[0], None)
-    if w==[]:
+    if w == []:
     	listeX=[]
     else:
     	listeX=find_trans(etat, eq_st, t_rel, pile[0], w[0])
@@ -93,24 +92,30 @@ def next_configs(a,c,w):
     for (nq, np) in listeX:
     	res=ajout(eq_st, ((nq, np+pile[1:]), w[1:]), res)	
     return res
-
-def accept(a, etat, pile, accepte_mode, w):
-	if w == []:
-		if accepte_mode==0:
-			return True
-		return False
-	
-	for (q, p, mot) in next_configs(a, (etat, pile), w):
-		if accept(q, p, mot):
-			return True
-	return False
 	
 def is_in_LA(a,w):
     # a : automate a pile
     # w : mot represente par une liste
     # A COMPLETER
     (st, alph, stack_alph, t_rel, init_st, init_stack, accept_mode, final_st, eq_st) = a
-    
-    return accept(a, init_st, init_stack, accept_mode, w)
+    return aux(a, init_st, [init_stack], w)
 
+def aux(a, etat, pile, word):
+    (st, alph, stack_alph, t_rel, init_st, init_stack, accept_mode, final_st, eq_st) = a
+
+    if word == []:
+        if accept_mode == 0:
+            if pile == []:
+                return True
+        else:
+            if eq_atom([etat], final_st):
+                return True
+
+
+    l=next_configs(a, (etat, pile), word)
+    
+    for ((q, p), w) in l:
+        if aux(a, q, p, w):
+            return True
+    return False
 
