@@ -98,6 +98,7 @@ def is_in_LA(a,w):
     # w : mot represente par une liste
     # A COMPLETER
     (st, alph, stack_alph, t_rel, init_st, init_stack, accept_mode, final_st, eq_st) = a
+    w=list(w)
     return aux(a, init_st, [init_stack], w)
 
 def aux(a, etat, pile, word):
