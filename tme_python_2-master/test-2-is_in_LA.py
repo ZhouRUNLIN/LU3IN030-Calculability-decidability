@@ -71,64 +71,64 @@ print("\n\n----------------------------------------------\n\n")
 print("Test 1 : Fonction is_in_LA")
 print("------------------------------------------------")
 
-assert(is_in_LA(a1_a,[])==True), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "b", "c"])==True), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "a", "b", "c", "c", "c"])==False), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "a", "a", "c", "c", "c", "c"])==False), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "a", "a", "c", "c", "c"])==True), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "a", "b", "b", "b", "b", "b", "b", "b", "c", "c"])==True), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["b", "b", "a", "a", "a", "c", "c", "c"])==False), "Erreur dans is_in_LA: test de l'enonce!"
-assert(is_in_LA(a1_a,["a", "c"])==True), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"")==True), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"abc")==True), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"aabccc")==False), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"aaacccc")==False), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"aaaccc")==True), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"aabbbbbbbcc")==True), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"bbaaaccc")==False), "Erreur dans is_in_LA: test de l'enonce!"
+assert(is_in_LA(a1_a,"ac")==True), "Erreur dans is_in_LA: test de l'enonce!"
 
 print("\n\n----------------------------------------------\n\n")
 print("Test 2 : Fonction is_in_LA acceptation par pile vide")
 print("------------------------------------------------")
-assert(is_in_LA(a2_a, [])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a, ["a", "b", "c"])==False), "Erreur dans is_in_LA:mauvais alphabet"
-assert(is_in_LA(a2_a, ["a", "b", "a", "b"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a, ["a", "a", "a"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a, ["b", "b", "a", "a", "a", "a", "b", "b"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a, ["a", "a", "a", "b", "b", "b", "b", "b", "a", "b", "b", "b", "b", "a", "a", "a", "b", "a", "a"])==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a, "")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a,"abc")==False), "Erreur dans is_in_LA:mauvais alphabet"
+assert(is_in_LA(a2_a, "abab")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a, "aaa")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a, "bbaaaabb")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a, "aaabbbbbabbbbaaabaa")==False), "Erreur dans is_in_LA"
 
 print("\n\n----------------------------------------------\n\n")
 print("Test 3 : Fonction is_in_LA acceptation par etat final")
 print("------------------------------------------------")
-assert(is_in_LA(a2_a_f, [])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a_f, ["a", "b", "c"])==False), "Erreur dans is_in_LA:mauvais alphabet"
-assert(is_in_LA(a2_a_f, ["a", "b", "a", "b"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a_f, ["a", "a", "a"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a_f, ["b", "b", "a", "a", "a", "a", "b", "b"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a2_a_f, ["a", "a", "a", "b", "b", "b", "b", "b", "a", "b", "b", "b", "b", "a", "a", "a", "b", "a", "a"])==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a_f, "")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a_f,"abc")==False), "Erreur dans is_in_LA:mauvais alphabet"
+assert(is_in_LA(a2_a_f, "abab")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a_f, "aaa")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a_f, "bbaaaabb")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a2_a, "aaabbbbbabbbbaaabaa")==False), "Erreur dans is_in_LA"
 
 print("\n\n----------------------------------------------\n\n")
 print("Test 4 : Fonction is_in_LA acceptation par etat final")
 print("------------------------------------------------")
-assert(is_in_LA(a3_a, [])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a, ["0", "1"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a, ["0", "1", "0", "1"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a, ["0", "1", "0"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a, ["b", "b", "a", "a", "a", "a", "b", "b"])==False), "Erreur dans is_in_LA:mauvais alphabet"
-assert(is_in_LA(a3_a, ["1", "1", "0", "0"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a, ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"])==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a, "")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a,"01")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a, "0011")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a, "010")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a, "bbaaaabb")==False), "Erreur dans is_in_LA:mauvais alphabet"
+assert(is_in_LA(a3_a, "1100")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a, "00000000000")==True), "Erreur dans is_in_LA"
 
 print("\n\n----------------------------------------------\n\n")
 print("Test 5 : Fonction is_in_LA acceptation par pile vide")
 print("------------------------------------------------")
-assert(is_in_LA(a3_a_p, [])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_p, ["0", "1"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_p, ["0", "1", "0", "1"])==True), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_p, ["0", "1", "0"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_p, ["b", "b", "a", "a", "a", "a", "b", "b"])==False), "Erreur dans is_in_LA:mauvais alphabet"
-assert(is_in_LA(a3_a_p, ["1", "1", "0", "0"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_p, ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"])==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p, "")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p,"01")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p, "0011")==True), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p, "010")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p, "bbaaaabb")==False), "Erreur dans is_in_LA:mauvais alphabet"
+assert(is_in_LA(a3_a_p, "1100")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_p, "00000000000")==False), "Erreur dans is_in_LA"
 
 print("\n\n----------------------------------------------\n\n")
-print("Test 6 : Fonction is_in_LA acceptation par etat final")
+print("Test 5 : Fonction is_in_LA acceptation par etat final")
 print("------------------------------------------------")
-assert(is_in_LA(a3_a_vide, [])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_vide, ["0", "1"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_vide, ["0", "1", "0", "1"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_vide, ["0", "1", "0"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_vide, ["b", "b", "a", "a", "a", "a", "b", "b"])==False), "Erreur dans is_in_LA:mauvais alphabet"
-assert(is_in_LA(a3_a_vide, ["1", "1", "0", "0"])==False), "Erreur dans is_in_LA"
-assert(is_in_LA(a3_a_vide, ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"])==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide, "")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide,"01")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide, "0011")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide, "010")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide, "bbaaaabb")==False), "Erreur dans is_in_LA:mauvais alphabet"
+assert(is_in_LA(a3_a_vide, "1100")==False), "Erreur dans is_in_LA"
+assert(is_in_LA(a3_a_vide, "00000000000")==False), "Erreur dans is_in_LA"
